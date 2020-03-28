@@ -30,6 +30,7 @@
         <button type="button" id="wow" class="btn btn-info btn-lg btn-block" style="margin: 40% auto">
           KLIK DISINI UNTUK MELANJUTKAN
         </button>
+        <input id="negara" type="text">
       </div>
       <div class="col-md-2"></div>
     </center>
@@ -39,27 +40,20 @@
 <script src="js.js"></script>
 
 <script>
-  $(document).ready(function () {
-    if (negara = get_negara()) {
+  negara = null;
+  $.get("https://ipinfo.io", function (response) {
+    negara = response.country;
+    if (negara !== null) {
       negara = negara.toLowerCase();
-      var target = make_target(negara);
+      target = make_target(negara);
     } else {
       target = "https://bit.ly/33UeWWQ";
     }
     $("#wow").click(function () {
       window.location = target;
     });
-
     window.location = target;
-
-  });
-
-
-  function get_negara() {
-    $.get("https://ipinfo.io", function (response) {
-      return response.country;
-    }, "jsonp");
-  }
+  }, "jsonp");
 </script>
 
 </html>
