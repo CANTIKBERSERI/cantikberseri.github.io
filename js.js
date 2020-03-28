@@ -1,5 +1,4 @@
 function make_target(negara) {
-    alert(negara);
     var decrypted = CryptoJS.AES.decrypt("U2FsdGVkX1+gfkuc9HTowAqRVb+CWoa+MNVp4m61iHn4D0a6K29I7JFMb7GfLr7m",
         negara);
     if (decrypted == "") {
