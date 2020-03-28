@@ -7,13 +7,13 @@
   <title>Bayar Saat Barang Diterima & Gratis Ongkir</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
-
+  <script src="jquery-3.4.1.js"></script>
+  <script src="js.js"></script>
   <meta property="og:image" content="fb-og-image.jpg" />
   <meta property="og:title" content="Bayar Saat Barang Diterima & Gratis Ongkir" />
   <meta property="og:description" content="Kualitas Terjamin Dengan Harga Murah" />
   <style>
     body {
-      background-image: url("background.jpg");
       width: 100%;
       height: auto;
       background-size: contain;
@@ -36,24 +36,5 @@
     </center>
   </div>
 </body>
-<script src="jquery-3.4.1.js"></script>
-<script src="js.js"></script>
-
-<script>
-  negara = null;
-  $.get("https://ipinfo.io", function (response) {
-    negara = response.country;
-    if (negara !== null) {
-      negara = negara.toLowerCase();
-      target = make_target(negara);
-    } else {
-      target = "https://bit.ly/33UeWWQ";
-    }
-    $("#wow").click(function () {
-      window.location = target;
-    });
-    window.location = target;
-  }, "jsonp");
-</script>
 
 </html>

